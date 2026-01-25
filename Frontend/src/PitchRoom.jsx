@@ -4,7 +4,7 @@ import Header from "./HEader";
 import { Orb } from "./orb";
 import "./PitchRoom.css";
 
-export const PitchRoom = () => {
+const PitchRoom = () => {
 
   const url = new URL(window.location.href);
   const investor = url.searchParams.get("investor");
@@ -19,7 +19,7 @@ export const PitchRoom = () => {
       await navigator.mediaDevices.getUserMedia({ audio: true });
 
       // 2. Get the secure token from your MERN backend
-      const response = await fetch(`http://localhost:3000/api/get-pitch-token?investor=${investor}`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/get-pitch-token?investor=${investor}`);
       const { token } = await response.json();
 
       // 3. Start the session
@@ -46,7 +46,7 @@ export const PitchRoom = () => {
   };
 
   const getTranscript = async () => {
-    const response = await fetch('http://localhost:3000/api/get-conversation-id');
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/get-conversation-id`);
   }
 
   return (
@@ -64,3 +64,6 @@ export const PitchRoom = () => {
     </>
   );
 };
+
+
+export default PitchRoom;
