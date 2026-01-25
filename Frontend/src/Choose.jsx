@@ -1,7 +1,7 @@
 import React from "react";
 import "./Choose.css";
 import { useNavigate } from "react-router-dom";
-import Header from "./HEader";
+import Header from "./Header";
 function Choose(){
   const navigate = useNavigate();
   

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Conversation } from '@elevenlabs/client';
-import Header from "./HEader";
+import Header from "./Header.jsx";
 import { Orb } from "./orb";
 import "./PitchRoom.css";
 
