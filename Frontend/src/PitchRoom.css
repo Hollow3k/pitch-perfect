@@ -1,0 +1,28 @@
+.orb-class {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 5rem;
+  margin-top: 50px;
+}
+.pitchroom-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85vh;
+    text-align: center;
+    background-color: #ffffff;
+}
+.pitchroom-container .button-pitchroom{
+    text-decoration: none;
+    background-color: black;
+    color: #e9ba00;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pitchroom-container .button-pitchroom:hover{
+    background-color: #e9ba00;
+    color: black;
+}

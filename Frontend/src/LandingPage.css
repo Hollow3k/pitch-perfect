@@ -1,0 +1,252 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.main-heading{
+    font-size: 7rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.sub-heading{
+    font-weight: bold;
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+    color: #e9ba00;
+}
+
+.black-text{
+    color: black;
+}
+
+.get-started-button{
+    text-decoration: none;
+    background-color: black;
+    color: #e9ba00;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.get-started-button:hover{
+    background-color: #e9ba00;
+    color: black;
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #e9ba00;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* AI Investors Section */
+.ai-investors {
+  padding: 80px 20px;
+  background: white;
+}
+
+.investors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.investor-card {
+  background: black;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.investor-card:hover {
+  transform: scale(1.05);
+}
+
+.investor-card h3 {
+  color: #e9ba00;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.investor-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 80px 20px;
+  background: white;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
+}
+
+.benefit-item {
+  flex: 1 1 280px;
+  padding: 40px 30px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.benefit-item:hover {
+  background-color: #fafafa;
+}
+
+.benefit-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.benefit-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.developed-by {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.developer-name {
+  font-weight: 600;
+  color: #e9ba00;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .investors-grid,
+  .benefits-container {
+    grid-template-columns: 1fr;
+  }
+
+  .step,
+  .investor-card {
+    max-width: 100%;
+  }
+  
+  .main-heading {
+    font-size: 4rem;
+  }
+  
+  .sub-heading {
+    font-size: 1.5rem;
+  }
+}
