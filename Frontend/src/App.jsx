@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PitchRoom from "./Pitchroom";
+import PitchRoom from "./PitchRoom";
 import LandingPage from "./LandingPage";
 import Choose from "./Choose";
 import "./App.css";
