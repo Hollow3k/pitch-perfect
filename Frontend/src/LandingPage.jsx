@@ -95,7 +95,7 @@ function LandingPage(){
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p className="developed-by">Developed by: <span className="developer-name">Angad Bajaj</span></p>
+          <p className="developed-by">Developed by: <a href="https://portfolioangadbajaj.vercel.app" target="_blank" rel="noopener noreferrer" className="developer-name">Angad Bajaj</a></p>
           <p className="tagline">"Give me six hours to chop down a tree and I will spend the first four sharpening the axe." — Abraham Lincoln</p>
         </div>
       </footer>
