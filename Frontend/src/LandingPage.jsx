@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
-import Header from "./HEader";
+import Header from "./Header";
 function LandingPage(){
   const navigate = useNavigate();
   
