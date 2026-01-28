@@ -65,12 +65,12 @@ const PitchRoom = () => {
         {conversation ? 'End Pitch Session' : 'Start Pitch Session'}
       </button> 
       
-      <button 
+      {/* <button 
         onClick={getReport}
         className="button-pitchroom"
       >
         Get Report
-      </button>
+      </button> */}
     </div>
     </>
   );
