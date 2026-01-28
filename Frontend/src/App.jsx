@@ -5,7 +5,7 @@ import LandingPage from "./LandingPage";
 import Choose from "./Choose";
 import "./App.css";
 import { Outlet } from 'react-router-dom';
-
+import Report from "./Report.jsx";
 
 function App(){
   return(
@@ -14,6 +14,8 @@ function App(){
         <Route path="/" element={<LandingPage />} />
         <Route path="/choose" element={<Choose />} />
         <Route path="/PitchRoom" element={<PitchRoom />} />
+        <Route path="*" element={<LandingPage />} />
+        <Route path="/report" element={<Report />} />
       </Routes>
     </Router>
   )

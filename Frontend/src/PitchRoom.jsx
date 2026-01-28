@@ -3,8 +3,15 @@ import { Conversation } from '@elevenlabs/client';
 import Header from "./Header.jsx";
 import { Orb } from "./orb";
 import "./PitchRoom.css";
+import { useNavigate } from 'react-router-dom';
+
 
 const PitchRoom = () => {
+
+  const navigate = useNavigate();
+  const getReport = () => {
+    navigate(`/report?investor=${investor}`);
+  };
 
   const url = new URL(window.location.href);
   const investor = url.searchParams.get("investor");
@@ -45,9 +52,6 @@ const PitchRoom = () => {
     }
   };
 
-  const getTranscript = async () => {
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/get-conversation-id`);
-  }
 
   return (
     <>
@@ -60,6 +64,13 @@ const PitchRoom = () => {
       >
         {conversation ? 'End Pitch Session' : 'Start Pitch Session'}
       </button> 
+      
+      <button 
+        onClick={getReport}
+        className="button-pitchroom"
+      >
+        Get Report
+      </button>
     </div>
     </>
   );
