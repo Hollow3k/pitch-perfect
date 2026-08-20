@@ -4,7 +4,6 @@ import PitchRoom from "./PitchRoom.jsx";
 import LandingPage from "./LandingPage";
 import Choose from "./Choose";
 import "./App.css";
-import { Outlet } from 'react-router-dom';
 import Report from "./Report.jsx";
 
 function App(){
