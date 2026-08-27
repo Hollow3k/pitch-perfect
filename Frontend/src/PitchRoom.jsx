@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Conversation } from '@elevenlabs/client';
 import Header from "./Header.jsx";
 import { Orb } from "./orb";
@@ -9,9 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const PitchRoom = () => {
 
   const navigate = useNavigate();
-  const getReport = () => {
-    navigate(`/report?investor=${investor}`);
-  };
+  const conversationRef = useRef(null);
 
   const url = new URL(window.location.href);
   const investor = url.searchParams.get("investor");
@@ -19,8 +17,10 @@ const PitchRoom = () => {
   const [conversation, setConversation] = useState(null);
   const [status, setStatus] = useState('Disconnected');
   const [agentState, setAgentState] = useState(null);
+  const [isConnecting, setIsConnecting] = useState(false);
 
   const startPitch = async () => {
+    setIsConnecting(true);
     try {
       // 1. Request microphone access
       await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -39,17 +39,22 @@ const PitchRoom = () => {
         onModeChange: (mode) => setAgentState(mode.mode) // 'speaking' or 'listening'
       });
 
+      conversationRef.current = conv;
       setConversation(conv);
     } catch (err) {
       console.error('Failed to start pitch:', err);
+    } finally {
+      setIsConnecting(false);
     }
   };
 
   const endPitch = async () => {
-    if (conversation) {
-      await conversation.endSession();
+    if (conversationRef.current) {
+      await conversationRef.current.endSession();
+      conversationRef.current = null;
       setConversation(null);
     }
+    navigate(`/report?investor=${investor}`);
   };
 
 
@@ -57,20 +62,14 @@ const PitchRoom = () => {
     <>
     <Header></Header>
     <div className="pitchroom-container">
-      <Orb agentState={agentState} className="orb-class" colors= {conversation ? ["#36e900", "#ffffff"] : ["#e90000", "#ffffff"]}></Orb>
+      <Orb agentState={agentState} className="orb-class" colors= {conversation ? ["#36e900", "#ffffff"] : isConnecting ? ["#e9ba00", "#ffffff"] : ["#e90000", "#ffffff"]}></Orb>
       <button 
         onClick={conversation ? endPitch : startPitch}
         className="button-pitchroom"
+        disabled={isConnecting}
       >
-        {conversation ? 'End Pitch Session' : 'Start Pitch Session'}
+        {isConnecting ? 'Connecting...' : conversation ? 'End Pitch' : 'Start Pitch Session'}
       </button> 
-      
-      {/* <button 
-        onClick={getReport}
-        className="button-pitchroom"
-      >
-        Get Report
-      </button> */}
     </div>
     </>
   );

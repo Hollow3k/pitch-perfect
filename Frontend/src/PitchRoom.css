@@ -27,3 +27,39 @@
     background-color: #e9ba00;
     color: black;
 }
+
+
+.connecting-text {
+    font-size: 1.2rem;
+    color: #e9ba00;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.dot-animation::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.pitchroom-container .button-pitchroom:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.pitchroom-container .button-pitchroom:disabled:hover {
+    background-color: black;
+    color: #e9ba00;
+}
